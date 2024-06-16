@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-df=pd.read_csv("/kaggle/input/democratvsrepublicantweets/ExtractedTweets.csv")
+df=pd.read_csv("ExtractedTweets.csv")
 df.dropna(inplace=True)
 
 X=df['Tweet'].values
