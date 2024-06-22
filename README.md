@@ -1,5 +1,13 @@
 # PolitiSenseAPI
 <br />
+<h2>Requirements: </h2>
+<ul>
+  <li>Python 3+</li>
+  <li>FastAPI Version 0.111.0</li>
+  <li>Tensorflow 2</li>
+  <li>Keras 3</li>
+</ul>
+<br />
 <h2>Start: </h2>
 <p>Install the model from the google drive: <a href="https://drive.google.com/drive/folders/1OZ6ud4rPmYYtKNXFpiIa1-CNdI3vwRSU?usp=sharing">here</a> and the tokenizer.txt file. An alternative to downloading the model is...</p>
 <p>Run "training.py" first in order to fit a model based on the following dataset: <a href="https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets">Democrats Vs Republican Tweets</a> on Kaggle.com (Download "ExtractedTweets.csv").</p>
