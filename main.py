@@ -14,11 +14,20 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-model=tf.keras.models.load_model("politicpolarity.h5")
+
 
 class PredModel(BaseModel):
     text: str
 
+def getModel():
+    m=tf.keras.models.Sequential()
+    m.add(tf.keras.layers.Embedding(len(tokenizer.word_index)+1, 64))
+    m.add(tf.keras.layers.LSTM(32, activation="relu"))
+    m.add(tf.keras.layers.Dense(10))
+    m.add(tf.keras.layers.Dense(1, activation="sigmoid"))
+    m.compile(optimizer="RMSprop", loss="binary_crossentropy", metrics=['accuracy'])
+    return m
+model=getModel().load_weights("politicpolarity.h5")    
 tk=tokenizer("tokenizer.txt")
 
 @app.post("/predict/text")
